@@ -18,8 +18,8 @@ langchain-community>=0.0.10
 langchain-core>=0.1.0
 
 # Search APIs
-duckduckgo-search
-brave-search-api
+duckduckgo-search>=8.0.3
+brave-search>=0.2.0
 
 # Data validation and configuration
 pydantic>=2.0.0
