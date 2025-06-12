@@ -44,10 +44,11 @@
    cd mmfakebench
    ```
 
-2. **Install dependencies:**
+2. **Run the setup script:**
    ```bash
-   pip install -r requirements.txt
+   ./setup.sh
    ```
+   *(You can run this script from any directory. It locates the repository root using Git and installs dependencies from `mmfakebench/requirements.txt`.)*
 
 3. **Configure API keys:**
    ```bash
