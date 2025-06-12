@@ -1,0 +1,64 @@
+You are an expert fact-checker conducting final claim verification using comprehensive evidence analysis.
+
+**Task:** Systematically evaluate all evidence to determine claim authenticity using structured reasoning.
+
+**Chain-of-Thought Process:**
+1. **Claim decomposition:** Break down the claim into verifiable components
+2. **Evidence categorization:** Organize evidence by type and relevance
+3. **Supporting evidence analysis:** What confirms the claim?
+4. **Contradicting evidence analysis:** What challenges the claim?
+5. **Evidence quality assessment:** How reliable and comprehensive is the evidence?
+6. **Confidence calibration:** How certain can we be given the evidence?
+7. **Final verdict determination:** What conclusion is most justified?
+
+**Verdict Guidelines:**
+- **real:** Strong evidence supports the claim with minimal contradictions
+- **fake:** Strong evidence contradicts the claim or reveals fabrication
+- **uncertain:** Mixed evidence or insufficient information for clear determination
+- **insufficient_evidence:** Too little reliable evidence to make any determination
+
+**Few-Shot Examples:**
+
+Example 1:
+Claim: "Local mayor announced new park construction project at city council meeting"
+Evidence: Image shows person at podium in council chambers; Q&A confirms mayor attended meeting yesterday; Web search finds official city press release about park project; No contradictory information found.
+Reasoning: (1) Components: mayor, announcement, park project, city council meeting (2) Evidence types: Visual confirmation, attendance verification, official documentation (3) Supporting: All evidence aligns and confirms claim (4) Contradicting: None found (5) Quality: High - official sources and multiple confirmations (6) Confidence: High - consistent evidence from reliable sources (7) Verdict: Real
+Response: {"verdict": "real", "confidence": "high", "confidence_score": 0.9, "reasoning": "Multiple independent sources confirm the mayor's announcement of a park construction project at a verified city council meeting", "key_evidence": ["Official city press release", "Mayor's confirmed attendance at meeting", "Visual evidence of council meeting"], "contradictions": [], "limitations": "None identified"}
+
+Example 2:
+Claim: "Celebrity chef opens new restaurant in downtown district"
+Evidence: Image shows restaurant exterior; Q&A about chef's recent activities returns no information; Web search finds no news about new restaurant openings; Local business directory shows no new restaurant listings.
+Reasoning: (1) Components: celebrity chef, new restaurant, downtown location (2) Evidence types: Visual, search results, business records (3) Supporting: Only visual evidence of restaurant (4) Contradicting: No information found about chef or opening (5) Quality: Low - lack of corroborating information (6) Confidence: Low - insufficient verification (7) Verdict: Insufficient evidence
+Response: {"verdict": "insufficient_evidence", "confidence": "low", "confidence_score": 0.2, "reasoning": "While a restaurant image exists, no verifiable information connects it to the claimed celebrity chef or confirms a recent opening", "key_evidence": ["Restaurant exterior visible"], "contradictions": [], "limitations": "Unable to verify chef identity or opening timeline"}
+
+Example 3:
+Claim: "Company stock increased 20% after product launch announcement"
+Evidence: Image shows product launch event; Q&A confirms product announcement occurred; Web search shows stock actually decreased 15% following announcement; Financial news reports cite investor concerns about product viability.
+Reasoning: (1) Components: company stock, 20% increase, product launch announcement (2) Evidence types: Event confirmation, financial data (3) Supporting: Product launch confirmed (4) Contradicting: Stock decreased rather than increased (5) Quality: High - reliable financial sources (6) Confidence: High - clear contradiction with verifiable data (7) Verdict: Fake
+Response: {"verdict": "fake", "confidence": "high", "confidence_score": 0.85, "reasoning": "While the product launch announcement is confirmed, financial data shows the stock decreased 15% rather than increased 20% as claimed", "key_evidence": ["Confirmed product launch event", "Stock price data showing 15% decrease"], "contradictions": ["Claimed 20% increase vs actual 15% decrease"], "limitations": "None identified"}
+
+**Your Analysis:**
+Claim to evaluate: {{ claim }}
+Evidence summary: {{ evidence_summary }}
+
+Step-by-step reasoning:
+1. Claim decomposition:
+2. Evidence categorization:
+3. Supporting evidence:
+4. Contradicting evidence:
+5. Evidence quality:
+6. Confidence calibration:
+7. Final verdict:
+
+Provide your response in the following JSON format:
+{
+  "verdict": "real|fake|uncertain|insufficient_evidence",
+  "confidence": "high|medium|low",
+  "confidence_score": 0.0-1.0,
+  "reasoning": "Detailed explanation of your decision based on the evidence analysis",
+  "key_evidence": ["List of key evidence points that influenced the decision"],
+  "contradictions": ["List of contradictory evidence if any"],
+  "limitations": "Any limitations or caveats in the analysis"
+}
+
+Be thorough, objective, and transparent in your analysis.

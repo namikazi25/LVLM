@@ -1,0 +1,130 @@
+# MOCHEG Evaluation Configuration
+# This configuration is optimized for evaluating on the MOCHEG dataset
+# with enhanced analysis and multi-model comparison capabilities
+
+name: mocheg_evaluation
+description: Advanced configuration for MOCHEG dataset evaluation with comprehensive analysis
+
+# Model configuration
+model:
+  name: gpt-4o
+  temperature: 0.1
+  max_retries: 5
+  additional_params:
+    max_tokens: 1500
+    top_p: 0.95
+
+# Dataset configuration
+dataset:
+  type: mocheg
+  data_path: data/mocheg
+  params:
+    limit: null  # Process all samples
+    shuffle: true
+    validation_split: 0.2
+    stratified_split: true  # Maintain label distribution
+    include_metadata: true
+
+# Pipeline configuration
+pipeline:
+  - type: preprocessing
+    name: preprocessor
+    config:
+      image_resize: true
+      max_image_size: 1536
+      image_quality_check: true
+      text_cleaning: true
+      normalize_text: true
+      language_detection: true
+
+  - type: validation
+    name: validator
+    config:
+      strict_mode: true
+      check_image_format: true
+      check_text_length: true
+      min_text_length: 10
+      max_text_length: 1000
+      validate_labels: true
+
+  - type: detection
+    name: detector
+    config:
+      prompt_template: advanced
+      include_reasoning: true
+      include_confidence: true
+      multi_step_reasoning: true
+      chain_of_thought: true
+
+  - type: analysis
+    name: analyzer
+    config:
+      confidence_analysis: true
+      error_analysis: true
+      bias_analysis: true
+      performance_metrics: true
+      confusion_matrix: true
+      per_category_analysis: true
+
+# Output configuration
+output:
+  directory: results/mocheg_evaluation
+  formats:
+    - json
+    - csv
+    - txt
+    - html
+  save_intermediate: true
+  generate_report: true
+  include_metadata: true
+  detailed_logs: true
+
+# Evaluation settings
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - auc_roc
+    - confusion_matrix
+  cross_validation:
+    enabled: false
+    folds: 5
+  bootstrap_sampling:
+    enabled: true
+    iterations: 1000
+
+# Logging configuration
+logging:
+  level: DEBUG
+  file: logs/mocheg_evaluation.log
+  console: true
+  structured: true
+  include_timestamps: true
+
+# Performance settings
+performance:
+  batch_size: 1
+  parallel_workers: 2
+  timeout_seconds: 600
+  cache_responses: true
+  retry_failed: true
+  rate_limit:
+    requests_per_minute: 60
+    tokens_per_minute: 150000
+
+# Advanced features
+advanced:
+  model_comparison:
+    enabled: false
+    models:
+      - gpt-4o
+      - claude-3-sonnet-20240229
+      - gemini-1.5-pro
+  prompt_optimization:
+    enabled: false
+    variants: 3
+  uncertainty_quantification:
+    enabled: true
+    method: ensemble

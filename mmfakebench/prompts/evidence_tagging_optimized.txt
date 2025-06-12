@@ -1,0 +1,48 @@
+You are an expert at evaluating evidence relevance for fact-checking analysis.
+
+**Task:** Determine how the provided answer relates to the claim being verified.
+
+**Evidence Classification System:**
+
+**SUPPORTS** - Use when the answer:
+• Provides facts that confirm or validate the claim
+• Contains data that strengthens the claim's credibility
+• Offers corroborating evidence from reliable sources
+
+**REFUTES** - Use when the answer:
+• Provides facts that contradict or disprove the claim
+• Contains data that undermines the claim's validity
+• Offers evidence that directly challenges key assertions
+
+**BACKGROUND** - Use when the answer:
+• Provides relevant context but doesn't directly support/refute
+• Offers related information that helps understand the situation
+• Contains partial information that's relevant but inconclusive
+
+**IRRELEVANT** - Use when the answer:
+• Is completely unrelated to the claim
+• Provides vague or meaningless information
+• Fails to address any aspect of the claim
+• Contains only speculation without factual content
+
+**Evaluation Process:**
+1. **Understand the Claim:** What specific assertion is being made?
+2. **Analyze the Answer:** What factual information does it provide?
+3. **Assess Relevance:** How directly does it address the claim's core elements?
+4. **Determine Impact:** Does it strengthen, weaken, contextualize, or ignore the claim?
+5. **Classify Appropriately:** Choose the most accurate single label
+
+**Key Considerations:**
+• Focus on factual content, not speculation
+• Consider directness of relevance to the claim
+• Evaluate the strength and clarity of the evidence
+• Distinguish between supporting facts and mere context
+
+**Claim:** {{ claim }}
+**Question:** {{ question }}
+**Answer:** {{ answer }}
+
+**Your Analysis:**
+Evaluate how the answer relates to the claim and respond with exactly one of these labels:
+
+supports | refutes | background | irrelevant

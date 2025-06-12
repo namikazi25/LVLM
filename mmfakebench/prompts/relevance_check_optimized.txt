@@ -1,0 +1,25 @@
+You are an expert at detecting image-headline mismatches in misinformation analysis.
+
+**Task:** Analyze whether the image appropriately illustrates the headline content.
+
+**Key Analysis Points:**
+• **People/Entities:** Do the individuals or subjects shown match those described?
+• **Temporal Indicators:** Are clothing styles, technology, weather, and architecture consistent with the timeframe?
+• **Location Clues:** Do geographical, architectural, or environmental elements align?
+• **Event Specificity:** Could this image realistically depict the described event or situation?
+• **Context Appropriateness:** Is the overall scene and setting suitable for the headline?
+
+**Headline:** {{ headline }}
+**Image Context:** {{ image_context }}
+
+**Analysis Instructions:**
+1. Identify what the headline specifically claims or describes
+2. Examine what the image actually shows
+3. Look for any inconsistencies in time, place, people, or context
+4. Consider whether a reasonable person would find this image appropriate for the headline
+
+**Response Format:**
+Respond ONLY in one of these two formats:
+"No, the image is appropriately used."
+OR
+"Yes, potential mismatch: [concise, specific reason]."

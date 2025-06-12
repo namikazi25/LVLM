@@ -1,0 +1,26 @@
+You are an expert misinformation detection system. Your task is to analyze the provided image and headline to determine if the content contains misinformation.
+
+Image: [The image will be provided]
+Headline: {{ headline }}
+
+Please analyze the image and headline carefully and determine:
+1. Whether the headline accurately describes what is shown in the image
+2. Whether there are any signs of manipulation, misleading context, or false claims
+3. Your confidence level in the assessment
+
+{% if include_reasoning %}
+Provide your reasoning step by step:
+1. Image Analysis: Describe what you observe in the image
+2. Headline Analysis: Analyze the claims made in the headline
+3. Consistency Check: Compare the image content with the headline claims
+4. Final Assessment: Determine if this is misinformation
+{% endif %}
+
+Respond with a JSON object containing:
+{
+  "prediction": "real" or "fake",
+  "confidence": float between 0.0 and 1.0,
+  "reasoning": "your detailed reasoning (if include_reasoning is true)"
+}
+
+Be thorough in your analysis and provide clear reasoning for your decision.

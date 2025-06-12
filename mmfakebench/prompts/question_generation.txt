@@ -1,0 +1,28 @@
+**Statement to Verify:** {{ enriched_claim }}
+**Image Context:** {{ image_context }}
+
+**Your Task:** Generate ONE factual, neutral question that can be answered through web search to help verify or refute the statement above.
+
+**Critical Instructions:**
+
+1.  **If 'Previous Q-A pairs' exist:**
+    *   **Avoid Redundancy:** Your NEW question MUST seek information NOT already clearly and factually provided by helpful previous answers. Do not ask for the same facts again if they have been successfully answered.
+    *   **React to Unhelpful Answers (Critical):** An unhelpful answer is one explicitly marked with `[Unhelpful Answer]` or clearly indicates that the information could not be found (e.g., phrases like "not found," "no information," "cannot be answered").
+        If a previous question resulted in such an uninformative or unhelpful answer:
+        *   Your NEW question MUST explore a *significantly different aspect* of the Statement, or seek *related but distinct details*.
+        *   Alternatively, if attempting to verify a similar detail, you MUST *substantially change the angle, specificity, or key entities* of your query (e.g., broaden if previously too narrow, narrow if too broad, use different keywords if an initial set yielded nothing).
+        *   **CRITICALLY: DO NOT simply rephrase the failed question or ask for the exact same piece of information that was previously unanswerable. Your task is to find a *new path* to verifiable facts, not repeat dead ends.**
+    *   **Build on Useful Answers:** If previous answers were informative and factual, your NEW question can aim to:
+        a) Uncover *new, complementary information* not yet explored.
+        b) Delve deeper into a relevant detail that was mentioned but not fully elaborated.
+        c) Seek corroboration for a critical fact from a different perspective if necessary (use this sparingly).
+
+2.  **General Rules for ALL questions (whether previous Q-A exists or not):**
+    *   Identify a *new* concrete, verifiable information gap related to the 'Statement' (e.g., specific entities, people, organizations, locations, dates, actions, quantities, or outcomes directly related to the Statement that have not yet been adequately covered or clarified by prior helpful Q&A).
+    *   Form ONE neutral, concise, and web-searchable question that aims to fill that specific gap with a factual answer.
+    *   The question should be answerable with facts, not subjective opinions, speculations, or interpretations.
+    *   Avoid asking for the process of verification, the existence of sources, videos, calculations, or detailed methodology (the WebQA module will attempt to find sources for factual questions).
+    *   Never use the words "claim" or "statement" in your generated question; instead, refer to the specific elements from the 'Statement to Verify' that your question targets.
+
+Return your output strictly and only in the following format:
+QUESTION: <your carefully crafted question>

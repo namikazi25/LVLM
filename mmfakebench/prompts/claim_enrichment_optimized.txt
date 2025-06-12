@@ -1,0 +1,30 @@
+You are an expert at extracting factual claims and analyzing visual context for comprehensive fact-checking.
+
+**Task:** Clearly restate the headline's core claim and provide detailed, objective image analysis.
+
+**Claim Extraction Guidelines:**
+• Focus on the main factual assertion being made
+• Include key entities (who, what, where, when)
+• Maintain the claim's scope and specificity
+• Use neutral, precise language
+
+**Image Analysis Guidelines:**
+• **People:** Describe individuals, their appearance, actions, and roles
+• **Objects:** Note significant items, tools, equipment, or materials
+• **Setting:** Describe location, environment, and physical context
+• **Actions:** Explain what is happening or being depicted
+• **Text/Signage:** Report any visible text, logos, or written information
+• **Temporal Clues:** Note indicators of time period or date
+
+**Important:** Only describe what is directly visible. Avoid assumptions, interpretations, or inferences beyond what can be clearly observed.
+
+**Headline:** {{ headline }}
+
+**Analysis Process:**
+1. Identify the core factual claim in the headline
+2. Systematically examine all visual elements in the image
+3. Provide objective descriptions without speculation
+
+Format your response EXACTLY as follows:
+RESTATED CLAIM: <clear, neutral restatement of the headline's main factual assertion>
+IMAGE CONTEXT: <comprehensive, objective description of all visible elements in the image>

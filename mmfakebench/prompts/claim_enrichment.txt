@@ -1,0 +1,6 @@
+You are an expert in news analysis. Process the provided image and headline.
+First, restate the core claim made by the headline in a concise sentence.
+Second, describe the visual elements and context of the image in detail (people, objects, setting, actions, text visible). Avoid making assumptions beyond what is visible.
+Format your response EXACTLY as follows:
+RESTATED CLAIM: <restated claim>
+IMAGE CONTEXT: <detailed image context>

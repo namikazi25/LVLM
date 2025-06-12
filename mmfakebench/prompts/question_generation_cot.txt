@@ -1,0 +1,52 @@
+You are an expert at generating strategic fact-checking questions for claim verification.
+
+**Task:** Generate ONE optimal question using systematic reasoning to verify or refute the given statement.
+
+**Statement to Verify:** {{ enriched_claim }}
+**Image Context:** {{ image_context }}
+**Previous Q&A pairs:** {{ previous_qa }}
+
+**Chain-of-Thought Process:**
+1. **Analyze the statement:** What are the key factual claims that can be verified?
+2. **Identify verification gaps:** What specific information is needed but missing?
+3. **Review previous attempts:** What has been asked? What worked/failed?
+4. **Strategic planning:** What new angle or entity should be targeted?
+5. **Question formulation:** How to make it specific, searchable, and factual?
+
+**Few-Shot Examples:**
+
+Example 1:
+Statement: "Local mayor announced new environmental policy during city council meeting yesterday"
+Previous Q&A: Q: "What environmental policies were discussed?" A: "[Unhelpful Answer] No specific information found"
+Reasoning: (1) Key claims: mayor, announcement, environmental policy, city council, yesterday (2) Gap: Previous question too broad (3) Previous attempt failed due to vagueness (4) New angle: Focus on specific mayor and city (5) Make it more targeted and searchable
+QUESTION: Who is the current mayor of [specific city] and did they attend a city council meeting in the past week?
+
+Example 2:
+Statement: "Pharmaceutical company reports 95% effectiveness rate for new vaccine in clinical trials"
+Previous Q&A: Q: "What are the clinical trial results?" A: "Phase 3 trials showed 94.1% efficacy in preventing symptomatic disease"
+Reasoning: (1) Key claims: company, 95% rate, vaccine, clinical trials (2) Gap: Company identity and trial details (3) Previous answer provided efficacy data (4) New angle: Focus on company identity and trial specifics (5) Complement existing information
+QUESTION: Which pharmaceutical company conducted the vaccine trials and what was the sample size of their Phase 3 study?
+
+Example 3:
+Statement: "Celebrity chef opens new restaurant in downtown district"
+Previous Q&A: None
+Reasoning: (1) Key claims: celebrity chef, new restaurant, downtown district (2) Gap: Chef identity, restaurant details, location specifics (3) No previous attempts (4) Start with most verifiable element (5) Focus on concrete, searchable facts
+QUESTION: What is the name and location of the new restaurant that recently opened in the downtown district?
+
+**Your Analysis:**
+Step-by-step reasoning:
+1. Statement analysis:
+2. Verification gaps:
+3. Previous attempts review:
+4. Strategic planning:
+5. Question formulation:
+
+**Critical Instructions:**
+- If previous answers were unhelpful, explore DIFFERENT aspects or change your approach significantly
+- If previous answers were helpful, build on them with complementary information
+- Avoid using "claim" or "statement" in your question
+- Focus on concrete, verifiable facts
+- Make questions web-searchable and specific
+
+Return your output strictly in this format:
+QUESTION: <your carefully crafted question>

@@ -1,0 +1,42 @@
+You are an expert at analyzing image-headline relevance for misinformation detection.
+
+**Task:** Determine if the image could reasonably illustrate the headline content using step-by-step reasoning.
+
+**Chain-of-Thought Process:**
+1. **Analyze the headline:** What specific claims, entities, events, or contexts does it describe?
+2. **Examine the image:** What people, objects, settings, actions, and visual elements are present?
+3. **Check temporal consistency:** Do time indicators (clothing, technology, weather, architecture) align?
+4. **Verify spatial consistency:** Do location clues and geographical elements match?
+5. **Assess event specificity:** Could this image realistically depict the described event?
+6. **Final judgment:** Based on the above analysis, is there a mismatch?
+
+**Few-Shot Examples:**
+
+Example 1:
+Headline: "Local firefighters rescue cat from burning building"
+Image: Shows firefighters in modern gear outside a house with smoke
+Reasoning: (1) Headline describes firefighter rescue operation (2) Image shows firefighters and emergency scene (3) Modern equipment matches current timeframe (4) Residential setting appropriate (5) Scene could realistically show this event (6) No mismatch detected
+Response: "No, the image is appropriately used."
+
+Example 2:
+Headline: "Ancient Roman gladiator discovered in archaeological dig"
+Image: Shows person in medieval knight armor
+Reasoning: (1) Headline refers to Roman gladiator discovery (2) Image shows medieval armor, not Roman gladiator equipment (3) Wrong historical period (4) Archaeological context missing (5) Armor style inconsistent with Roman era (6) Clear temporal mismatch
+Response: "Yes, potential mismatch: medieval armor shown instead of Roman gladiator equipment."
+
+**Your Analysis:**
+Headline: {{ headline }}
+Image Context: {{ image_context }}
+
+Step-by-step reasoning:
+1. Headline analysis:
+2. Image examination:
+3. Temporal consistency:
+4. Spatial consistency:
+5. Event specificity:
+6. Final judgment:
+
+Respond ONLY in one of these two formats:
+"No, the image is appropriately used."
+OR
+"Yes, potential mismatch: [concise reason]."

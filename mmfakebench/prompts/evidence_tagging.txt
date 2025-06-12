@@ -1,0 +1,13 @@
+Classify how the following Q&A pair relates to the claim.
+
+Possible labels:
+- supports: The answer provides evidence supporting the claim
+- refutes: The answer provides evidence against the claim
+- background: The answer gives general context but doesn't support/refute
+- irrelevant: The answer is unrelated or vague
+
+Respond ONLY with one of the labels above.
+
+Claim: {{ claim }}
+Q: {{ question }}
+A: {{ answer }}

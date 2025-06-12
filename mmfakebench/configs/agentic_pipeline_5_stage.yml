@@ -1,0 +1,103 @@
+# 5-Stage Agentic Misinformation Detection Pipeline Configuration
+# This configuration restores the sophisticated agentic workflow from the original implementation
+
+name: agentic_pipeline_5_stage
+description: 5-stage agentic misinformation detection pipeline with specialized agents
+
+# Model configuration
+model:
+  name: gemini-2.0-flash-exp
+  api_key: $GEMINI_API_KEY
+  temperature: 0.2
+  max_retries: 3
+  additional_params:
+    max_tokens: 1000
+
+# Dataset configuration
+dataset:
+  type: custom
+  data_path: ../data/MMFakeBench/MMFakeBench_test.json
+  params:
+    images_base_dir: ../data/MMFakeBench/MMFakeBench_test
+    limit: 10  # Process only 10 samples
+    shuffle: true
+    validation_split: 0.1
+
+# Simplified Agentic Pipeline Configuration
+pipeline:
+  stages:
+    - name: preprocessing
+      module_type: preprocessing
+      config:
+        validate_inputs: true
+        normalize_images: true
+        
+    - name: agentic_workflow
+      module_type: agentic_orchestrator
+      config:
+        llm_provider: gemini
+        model_name: gemini-2.0-flash-exp
+        max_qa_iterations: 3
+        confidence_threshold: 0.7
+        enable_web_search: true
+        max_retries: 3
+        retry_delay: 1.0
+        timeout: 30
+        show_workflow: true
+
+# Web Search Configuration
+web_search:
+  enabled: true
+  brave_api_key: $BRAVE_SEARCH_API_KEY
+  max_results: 10
+  timeout: 30
+  retry_attempts: 3
+  fallback_engines:
+    - duckduckgo
+
+# Agentic Workflow Parameters
+agentic_params:
+  num_chains: 3
+  num_claims_per_branch: 3
+  max_retries_per_question: 3
+  evidence_sufficiency_threshold: 0.3
+  confidence_threshold: 0.7
+  enable_qa_selection: true
+  enable_preliminary_classification: true
+  enable_soft_fallback: true
+  sleep_between_calls: 5  # seconds
+
+# Output configuration
+output:
+  format: json
+  save_path: results/agentic_pipeline_5_stage_results.json
+  include_metadata: true
+  save_intermediate: true
+  intermediate_path: results/agentic_pipeline_intermediate/
+  save_qa_pairs: true
+  save_evidence_scores: true
+  save_confidence_scores: true
+
+# Logging configuration
+logging:
+  level: INFO
+  file: logs/agentic_pipeline_5_stage.log
+  console: true
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  log_intermediate_steps: true
+  log_agent_decisions: true
+
+# Evaluation configuration
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - confusion_matrix
+    - confidence_calibration
+    - evidence_quality_score
+  save_results: true
+  results_path: results/agentic_pipeline_5_stage_evaluation.json
+  detailed_analysis: true
+  save_failure_analysis: true

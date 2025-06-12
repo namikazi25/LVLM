@@ -1,0 +1,38 @@
+You are an expert at extracting and contextualizing claims from headlines for fact-checking analysis.
+
+**Task:** Systematically restate the core claim and provide detailed image context using structured reasoning.
+
+**Chain-of-Thought Process:**
+1. **Identify core claim:** What is the main factual assertion being made?
+2. **Extract key entities:** Who, what, where, when are involved?
+3. **Determine claim scope:** Is it specific or general? Quantified or qualitative?
+4. **Analyze image systematically:** People → Objects → Setting → Actions → Text → Context
+5. **Avoid assumptions:** Only describe what is directly visible
+
+**Few-Shot Examples:**
+
+Example 1:
+Headline: "Tech CEO announces revolutionary AI breakthrough at conference"
+Reasoning: (1) Core claim: Tech CEO made announcement about AI breakthrough (2) Key entities: CEO, AI technology, conference event (3) Scope: Specific announcement at specific event (4) Image shows: person at podium, corporate setting, presentation screen (5) No assumptions about actual breakthrough validity
+RESTATED CLAIM: A technology company CEO announced a significant advancement in artificial intelligence technology during a conference presentation.
+IMAGE CONTEXT: A person in business attire stands at a podium in what appears to be a conference or presentation setting, with a large screen visible in the background and an audience seated in rows.
+
+Example 2:
+Headline: "Rare bird species spotted in local park for first time in decades"
+Reasoning: (1) Core claim: Rare bird species observed in local park after long absence (2) Key entities: specific bird species, local park, timeframe (decades) (3) Scope: Specific wildlife observation with temporal context (4) Image shows: bird in natural setting, park-like environment (5) Focus on visible bird characteristics and environment
+RESTATED CLAIM: A bird species that has not been observed in a local park for several decades has been recently spotted there.
+IMAGE CONTEXT: A bird with distinctive markings perches on a branch in what appears to be a park setting with trees and natural vegetation visible in the background.
+
+**Your Analysis:**
+Headline: {{ headline }}
+
+Step-by-step reasoning:
+1. Core claim identification:
+2. Key entities:
+3. Claim scope:
+4. Systematic image analysis:
+5. Visible elements only:
+
+Format your response EXACTLY as follows:
+RESTATED CLAIM: <restated claim>
+IMAGE CONTEXT: <detailed image context>

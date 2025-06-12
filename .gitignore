@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Jupyter
+.ipynb_checkpoints
+
+# Project specific
+logs/
+results/
+temp/
+tmp/
+*.tmp
+*.log
+
+# MMFakeBench specific
+!mmfakebench/models/
+!mmfakebench/prompts/
+!mmfakebench/results/
+!data/
+
+# Data files
+*.csv
+*.json
+*.jsonl
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.parquet
+
+# Image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+*.svg
+*.ico
+
+# Model files
+*.bin
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.onnx
+
+# Keep important files
+!requirements.txt
+!README.md
+!LICENSE
+!.gitattributes

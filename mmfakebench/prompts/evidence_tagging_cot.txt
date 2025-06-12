@@ -1,0 +1,60 @@
+You are an expert at evaluating evidence relevance for fact-checking analysis.
+
+**Task:** Systematically analyze how the answer relates to the claim using structured reasoning.
+
+**Chain-of-Thought Process:**
+1. **Understand the claim:** What specific assertion is being made?
+2. **Analyze the answer:** What information does it provide?
+3. **Assess direct relevance:** Does the answer address the claim's core elements?
+4. **Evaluate evidence strength:** Does it support, contradict, or provide context?
+5. **Final classification:** Choose the most accurate label
+
+**Label Definitions:**
+- **supports:** Answer provides evidence that validates or confirms the claim
+- **refutes:** Answer provides evidence that contradicts or disproves the claim
+- **background:** Answer gives relevant context but doesn't directly support/refute
+- **irrelevant:** Answer is unrelated, vague, or doesn't address the claim
+
+**Few-Shot Examples:**
+
+Example 1:
+Claim: "Local fire department responded to apartment building fire on Main Street yesterday"
+Q: "Were there any fire incidents reported on Main Street in the past 24 hours?"
+A: "Fire department records show Engine 12 and Ladder 3 responded to a structure fire at 425 Main Street at 3:47 PM yesterday. The incident involved a second-floor apartment unit."
+Reasoning: (1) Claim: Fire department response to apartment fire on Main Street yesterday (2) Answer: Confirms fire department response, location (Main Street), timeframe (yesterday), and apartment involvement (3) Direct relevance: High - addresses all key elements (4) Evidence strength: Strong confirmation (5) Classification: Supports
+Label: supports
+
+Example 2:
+Claim: "New restaurant received 5-star rating from food critic"
+Q: "What ratings has the new downtown restaurant received?"
+A: "The restaurant has been open for two weeks and serves Mediterranean cuisine. It's located in the former bookstore building."
+Reasoning: (1) Claim: Restaurant received 5-star rating from critic (2) Answer: Provides restaurant details but no rating information (3) Direct relevance: Low - doesn't address rating claim (4) Evidence strength: Provides context but no evidence about ratings (5) Classification: Background
+Label: background
+
+Example 3:
+Claim: "Company stock price increased 15% after earnings announcement"
+Q: "How did the company's stock perform following their quarterly earnings report?"
+A: "The stock price dropped 12% in after-hours trading following the earnings announcement, with analysts citing disappointing revenue figures."
+Reasoning: (1) Claim: Stock increased 15% after earnings (2) Answer: Stock dropped 12% after earnings (3) Direct relevance: High - directly addresses stock performance post-earnings (4) Evidence strength: Contradicts the claim (5) Classification: Refutes
+Label: refutes
+
+Example 4:
+Claim: "Local school district implements new math curriculum"
+Q: "What changes has the school district made to their academic programs?"
+A: "Weather conditions have been unusually warm this month, affecting outdoor activities."
+Reasoning: (1) Claim: School district curriculum change (2) Answer: About weather conditions (3) Direct relevance: None - completely unrelated topics (4) Evidence strength: No relevance to educational claim (5) Classification: Irrelevant
+Label: irrelevant
+
+**Your Analysis:**
+Claim: {{ claim }}
+Q: {{ question }}
+A: {{ answer }}
+
+Step-by-step reasoning:
+1. Claim understanding:
+2. Answer analysis:
+3. Direct relevance assessment:
+4. Evidence strength evaluation:
+5. Final classification:
+
+Respond ONLY with one of these labels: supports, refutes, background, irrelevant

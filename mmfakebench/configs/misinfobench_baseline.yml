@@ -1,0 +1,70 @@
+# MisinfoBench Baseline Configuration
+# This configuration provides a baseline setup for evaluating multimodal misinformation detection
+
+name: misinfobench_baseline
+description: Baseline configuration for MisinfoBench multimodal misinformation detection
+
+# Model configuration
+model:
+  name: gpt-4o-mini
+  api_key: $OPENAI_API_KEY
+  temperature: 0.2
+  max_retries: 3
+  additional_params:
+    max_tokens: 1000
+
+# Dataset configuration
+dataset:
+  type: misinfobench
+data_path: data/MisinfoBench
+  params:
+    limit: null  # Process all samples
+    shuffle: false
+    validation_split: 0.1
+
+# Pipeline configuration
+pipeline:
+  - type: preprocessing
+    name: preprocessor
+    config:
+      image_resize: true
+      max_image_size: 1024
+      text_cleaning: true
+      normalize_text: true
+
+  - type: validation
+    name: validator
+    config:
+      strict_mode: false
+      check_image_format: true
+      check_text_length: true
+
+  - type: detection
+    name: detector
+    config:
+      prompt_template: baseline
+      include_reasoning: true
+      confidence_threshold: 0.5
+
+# Output configuration
+output:
+  directory: results/misinfobench_baseline
+  formats:
+    - json
+    - csv
+  save_intermediate: true
+  generate_report: true
+  include_metadata: true
+
+# Logging configuration
+logging:
+  level: INFO
+  file: logs/misinfobench_baseline.log
+  console: true
+
+# Performance settings
+performance:
+  batch_size: 1
+  parallel_workers: 1
+  timeout_seconds: 300
+  cache_responses: true
