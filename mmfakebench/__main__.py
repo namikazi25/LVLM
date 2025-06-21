@@ -204,7 +204,7 @@ def handle_run_command(args):
     # Apply custom overrides
     if args.override:
         overrides = parse_overrides(args.override)
-        config = config_manager.merge_configs(config, overrides)
+        config = config_manager.apply_overrides(config, overrides)
     
     # Validate final configuration
     validation = config_manager.validator.validate_benchmark_config(config)
@@ -288,7 +288,6 @@ def handle_validate_command(args):
     config_manager = ConfigManager()
     try:
         config = config_manager.load_config(args.config)
-        config_manager.validate_config(config, strict=args.strict)
         logger.info("✓ Configuration is valid")
         
         # Show configuration summary

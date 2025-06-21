@@ -10,7 +10,7 @@ import re
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 
 
 class ValidationModule(BasePipelineModule):

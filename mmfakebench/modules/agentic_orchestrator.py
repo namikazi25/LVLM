@@ -11,7 +11,7 @@ import logging
 import time
 from typing import Dict, Any, List, Optional
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 from modules.relevance_checker import ImageHeadlineRelevancyChecker
 from modules.claim_enrichment import ClaimEnrichmentTool
 from modules.question_generator import QAGenerationTool

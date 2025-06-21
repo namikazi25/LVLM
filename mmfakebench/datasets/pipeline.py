@@ -309,18 +309,24 @@ def create_dataset(config: Dict[str, Any]) -> BaseDataset:
     # Import dataset classes
     from .misinfobench import MisinfoBenchDataset
     from .mocheg import MOCHEGDataset
-    
+    from .mmfakebench import MMFakeBenchDataset
+
     dataset_type = config['type'].lower()
-    
+
     if dataset_type == 'misinfobench':
         dataset = MisinfoBenchDataset(
             data_path=config['data_path'],
-            image_dir=config.get('image_dir')
+            images_base_dir=config.get('images_base_dir')
         )
     elif dataset_type == 'mocheg':
         dataset = MOCHEGDataset(
             data_path=config['data_path'],
-            image_dir=config.get('image_dir')
+            images_base_dir=config.get('images_base_dir')
+        )
+    elif dataset_type == 'mmfakebench':
+        dataset = MMFakeBenchDataset(
+            data_path=config['data_path'],
+            images_base_dir=config.get('images_base_dir')
         )
     else:
         raise ValueError(f"Unsupported dataset type: {dataset_type}")

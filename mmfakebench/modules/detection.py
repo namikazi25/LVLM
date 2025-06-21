@@ -8,7 +8,7 @@ import os
 import logging
 from typing import Dict, Any, Optional
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 from models.router import ModelRouter
 from core.prompts import PromptManager
 

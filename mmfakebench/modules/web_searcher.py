@@ -12,7 +12,7 @@ import time
 from typing import Dict, Any, List, Optional, Union
 from urllib.parse import quote_plus
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 
 
 class WebSearcher(BasePipelineModule):
@@ -159,6 +159,8 @@ class WebSearcher(BasePipelineModule):
         combined_results = self._combine_results(brave_results, duckduckgo_results)
         
         search_time = time.time() - start_time
+
+        search_success = len(combined_results) > 0
         
         return {
             **data,
@@ -171,7 +173,8 @@ class WebSearcher(BasePipelineModule):
                 'total_results': len(combined_results),
                 'search_engines_used': engines_used,
                 'search_time': search_time
-            }
+            },
+            'search_success': search_success
         }
     
     def _search_brave(self, query: str) -> List[Dict[str, Any]]:

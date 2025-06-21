@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 
 
 class EvidenceTagger(BasePipelineModule):

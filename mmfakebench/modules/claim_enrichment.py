@@ -10,7 +10,7 @@ import time
 import logging
 from typing import Dict, Any, Tuple, Optional
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 from models.router import ModelRouter
 
 

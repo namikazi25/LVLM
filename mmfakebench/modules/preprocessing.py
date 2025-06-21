@@ -12,7 +12,7 @@ from pathlib import Path
 import html
 import unicodedata
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 
 
 class PreprocessingModule(BasePipelineModule):

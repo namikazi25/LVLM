@@ -10,7 +10,7 @@ import time
 from typing import Dict, Any, List, Optional, Union
 from enum import Enum
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 from models.router import ModelRouter
 
 

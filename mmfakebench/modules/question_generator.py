@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 
-from core.base import BasePipelineModule
+from ..core.base import BasePipelineModule
 
 # Patterns that indicate unhelpful answers
 UNHELPFUL_ANSWER_PATTERNS = [
