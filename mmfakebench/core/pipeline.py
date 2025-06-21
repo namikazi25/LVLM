@@ -26,63 +26,63 @@ class PipelineManager:
         """Register built-in pipeline modules."""
         # Import and register built-in modules
         try:
-            from modules.detection import DetectionModule
+            from ..modules.detection import DetectionModule
             self.register_module('detection', DetectionModule)
         except ImportError:
             logging.warning("DetectionModule not available")
         
         try:
-            from modules.validation import ValidationModule
+            from ..modules.validation import ValidationModule
             self.register_module('validation', ValidationModule)
         except ImportError:
             logging.warning("ValidationModule not available")
         
         try:
-            from modules.preprocessing import PreprocessingModule
+            from ..modules.preprocessing import PreprocessingModule
             self.register_module('preprocessing', PreprocessingModule)
         except ImportError:
             logging.warning("PreprocessingModule not available")
         
         # Register agentic workflow modules
         try:
-            from modules.relevance_checker import ImageHeadlineRelevancyChecker
+            from ..modules.relevance_checker import ImageHeadlineRelevancyChecker
             self.register_module('relevance_checker', ImageHeadlineRelevancyChecker)
         except ImportError:
             logging.warning("ImageHeadlineRelevancyChecker not available")
         
         try:
-            from modules.claim_enrichment import ClaimEnrichmentTool
+            from ..modules.claim_enrichment import ClaimEnrichmentTool
             self.register_module('claim_enrichment', ClaimEnrichmentTool)
         except ImportError:
             logging.warning("ClaimEnrichmentTool not available")
         
         try:
-            from modules.question_generator import QAGenerationTool
+            from ..modules.question_generator import QAGenerationTool
             self.register_module('qa_generation', QAGenerationTool)
         except ImportError:
             logging.warning("QAGenerationTool not available")
         
         try:
-            from modules.evidence_tagger import EvidenceTagger
+            from ..modules.evidence_tagger import EvidenceTagger
             self.register_module('evidence_tagger', EvidenceTagger)
         except ImportError:
             logging.warning("EvidenceTagger not available")
         
         try:
-            from modules.synthesizer import Synthesizer
+            from ..modules.synthesizer import Synthesizer
             self.register_module('synthesizer', Synthesizer)
         except ImportError:
             logging.warning("Synthesizer not available")
         
         try:
-            from modules.web_searcher import WebSearcher
+            from ..modules.web_searcher import WebSearcher
             self.register_module('web_searcher', WebSearcher)
         except ImportError:
             logging.warning("WebSearcher not available")
         
         # Register agentic orchestrator
         try:
-            from modules.agentic_orchestrator import AgenticOrchestrator
+            from ..modules.agentic_orchestrator import AgenticOrchestrator
             self.register_module('agentic_orchestrator', AgenticOrchestrator)
         except ImportError:
             logging.warning("AgenticOrchestrator not available")
