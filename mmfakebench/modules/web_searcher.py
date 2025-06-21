@@ -116,6 +116,7 @@ class WebSearcher(BasePipelineModule):
                 'search_engines_used': 'List[str]',
                 'search_time': 'float'
             },
+            'search_success': 'bool',
             'module_status': 'str'
         }
     
@@ -161,20 +162,20 @@ class WebSearcher(BasePipelineModule):
         search_time = time.time() - start_time
 
         search_success = len(combined_results) > 0
-        
+
         return {
             **data,
             'search_results': {
                 'brave_results': brave_results,
                 'duckduckgo_results': duckduckgo_results,
-                'combined_results': combined_results
+                'combined_results': combined_results,
             },
             'search_metadata': {
                 'total_results': len(combined_results),
                 'search_engines_used': engines_used,
-                'search_time': search_time
+                'search_time': search_time,
             },
-            'search_success': search_success
+            'search_success': search_success,
         }
     
     def _search_brave(self, query: str) -> List[Dict[str, Any]]:

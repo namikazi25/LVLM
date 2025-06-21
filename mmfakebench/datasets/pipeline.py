@@ -312,11 +312,22 @@ def create_dataset(config: Dict[str, Any]) -> BaseDataset:
     from .mmfakebench import MMFakeBenchDataset
 
     dataset_type = config['type'].lower()
+    images_base_dir = config.get('images_base_dir')
 
     if dataset_type == 'misinfobench':
         dataset = MisinfoBenchDataset(
             data_path=config['data_path'],
-            images_base_dir=config.get('images_base_dir')
+            images_base_dir=images_base_dir
+        )
+    elif dataset_type == 'mocheg':
+        dataset = MOCHEGDataset(
+            data_path=config['data_path'],
+            images_base_dir=images_base_dir
+        )
+    elif dataset_type == 'mmfakebench':
+        dataset = MMFakeBenchDataset(
+            data_path=config['data_path'],
+            images_base_dir=images_base_dir
         )
     elif dataset_type == 'mocheg':
         dataset = MOCHEGDataset(

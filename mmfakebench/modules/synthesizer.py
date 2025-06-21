@@ -11,7 +11,7 @@ from typing import Dict, Any, List, Optional, Union
 from enum import Enum
 
 from ..core.base import BasePipelineModule
-from models.router import ModelRouter
+from ..models.router import ModelRouter
 
 
 class VerdictType(Enum):
@@ -90,7 +90,7 @@ class Synthesizer(BasePipelineModule):
         }
         
         # Load prompt template
-        from core.prompts import get_prompt_manager
+        from ..core.prompts import get_prompt_manager
         self.prompt_manager = get_prompt_manager()
         self.template_name = "evidence_synthesis"
     

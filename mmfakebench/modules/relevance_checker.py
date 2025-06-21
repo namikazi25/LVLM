@@ -11,7 +11,7 @@ import logging
 from typing import Dict, Any, Tuple, Optional
 
 from ..core.base import BasePipelineModule
-from models.router import ModelRouter
+from ..models.router import ModelRouter
 
 
 class ImageHeadlineRelevancyChecker(BasePipelineModule):
@@ -63,7 +63,7 @@ class ImageHeadlineRelevancyChecker(BasePipelineModule):
         self.logger = logging.getLogger(f"{__name__}.{self.name}")
         
         # Load prompt template
-        from core.prompts import get_prompt_manager
+        from ..core.prompts import get_prompt_manager
         self.prompt_manager = get_prompt_manager()
         self.template_name = "relevance_check"
     

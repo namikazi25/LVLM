@@ -12,12 +12,12 @@ import time
 from typing import Dict, Any, List, Optional
 
 from ..core.base import BasePipelineModule
-from modules.relevance_checker import ImageHeadlineRelevancyChecker
-from modules.claim_enrichment import ClaimEnrichmentTool
-from modules.question_generator import QAGenerationTool
-from modules.web_searcher import WebSearcher
-from modules.evidence_tagger import EvidenceTagger
-from modules.synthesizer import Synthesizer
+from .relevance_checker import ImageHeadlineRelevancyChecker
+from .claim_enrichment import ClaimEnrichmentTool
+from .question_generator import QAGenerationTool
+from .web_searcher import WebSearcher
+from .evidence_tagger import EvidenceTagger
+from .synthesizer import Synthesizer
 
 
 class AgenticOrchestrator(BasePipelineModule):

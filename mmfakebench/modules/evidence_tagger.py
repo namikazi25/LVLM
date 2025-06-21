@@ -60,7 +60,7 @@ class EvidenceTagger(BasePipelineModule):
         self.logger = logging.getLogger(f"{__name__}.{self.name}")
         
         # Load prompt template
-        from core.prompts import get_prompt_manager
+        from ..core.prompts import get_prompt_manager
         self.prompt_manager = get_prompt_manager()
         self.template_name = "evidence_tagging"
         
@@ -68,7 +68,7 @@ class EvidenceTagger(BasePipelineModule):
         """Initialize the module with its configuration."""
         try:
             if not self.model_router:
-                from models.router import ModelRouter
+                from ..models.router import ModelRouter
                 import os
                 
                 # Get API key from config or environment

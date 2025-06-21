@@ -180,9 +180,12 @@ class BasePipelineModule(ABC):
         self.config = config or {}
         self._initialized = False
     
-    @abstractmethod
     def validate_config(self) -> Dict[str, Any]:
-        """Validate the module's configuration."""
+        """Validate the module's configuration.
+        
+        Returns:
+            A dictionary with validation results.
+        """
         return {'valid': True, 'errors': [], 'warnings': []}
 
     def initialize(self) -> None:
